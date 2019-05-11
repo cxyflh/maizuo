@@ -1,0 +1,120 @@
+<style>
+	header{
+		width: 100%;
+		height: 44px;
+		display: flex;
+		border-bottom: #ededed solid 1px;
+	}
+	header div:nth-child(1){
+		width: 20%;
+		height: 44px;
+		text-align:center;
+		line-height: 44px;
+		font-size: 13px;
+	}
+	header div:nth-child(2){
+		width: 60%;
+		height: 44px;
+		text-align:center;
+		line-height: 44px;
+		font-size: 17px;
+	}
+	header div:nth-child(3){
+		width: 20%;
+		height: 44px;
+		text-align:center;
+		line-height: 44px;
+		font-size: 13px;
+	}
+	.label_cart{
+		width: 100%;
+		height: 49px;
+		display: flex;
+		border-bottom: #ededed solid 1px;
+	}
+	label{
+		width: 33.3%;
+		height: 49px;
+		line-height: 49px;
+		text-align: center;
+	}
+	.cont{
+		width: 100%;
+		height: 75px;
+		display: flex;
+		border-bottom: #ededed solid 1px;
+		align-items:center;
+		padding: 15px;
+		box-sizing: border-box;
+	}
+	.place{
+		width: 75%;
+		height: 45px;
+		position: relative;
+	}
+	 .span1{
+		position:absolute;
+		width: 212px;
+		height: 22px;
+		font-size: 15px;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space:nowrap
+	}
+	.span2{
+		position:absolute;
+		margin-top: 5px;
+		color: #797D82;
+		width: 212px;
+		height: 18px;
+		font-size: 12px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	} 
+	.pri{
+		width: 25%;
+		height: 45px;
+		position: relative;
+	}
+	.pri p{
+		text-align: center;
+		color:#ff5f16;
+		font-size:12px;
+	}
+	p>span:nth-child(1){
+		font-size: 15px;	
+	}
+	.pri span:nth-child(2){
+		font-size: 12px;
+		color: #797D82;
+		/* text-align: center; */
+		left: 20px;
+		margin-top: 10px;
+		position: absolute;
+	}
+</style>
+<header>
+	<div class="iconfont">深圳&#xe689;</div>
+	<div>影院</div>
+	<div class="iconfont">&#xe6a8;</div>
+</header>
+<div class="label_cart">
+	<label class="iconfont">全城&#xe689;</label>
+	<label class="iconfont">APP订票&#xe689;</label>
+	<label class="iconfont">最近去过&#xe689;</label>
+</div>
+<ul>
+	{{each cinemas val}}
+	<li class="cont">
+		<div class="place">
+			<span class="span1">{{val.name}}</span><br/>
+			<span class="span2">{{val.address}}</span>
+		</div>
+		<div class="pri">
+			<p>¥ <span>{{val.lowPrice/100}}</span> 起</p>
+			<span>距离未知</span>
+		</div>
+	</li>
+	{{/each}}
+</ul>
